@@ -18,5 +18,5 @@ dependencies {
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.13.0")
     //Testing
     testImplementation 'junit:junit:4.13.2'
-
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 }
