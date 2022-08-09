@@ -2,6 +2,7 @@ package io.realworld.api
 
 import io.realworld.api.Utils.Constants
 import io.realworld.api.services.ConduitApi
+import io.realworld.api.services.ConduitApiAuth
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
@@ -11,5 +12,5 @@ class ConduitClient {
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
 
-    val api = retrofit.create(ConduitApi::class.java)
+    val api = retrofit.create(ConduitApiAuth::class.java)
 }
