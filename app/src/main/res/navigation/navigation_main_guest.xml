@@ -13,7 +13,7 @@
     <fragment
         android:id="@+id/nav_auth"
         android:name="io.realworld.condiut.ui.auth.AuthFragment"
-        android:label="@string/menu_global_feed"
+        android:label="@string/menu_auth"
         tools:layout="@layout/fragment_auth" />
 
 </navigation>
