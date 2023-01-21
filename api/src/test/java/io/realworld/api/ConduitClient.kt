@@ -6,7 +6,6 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Test
-import kotlin.math.sign
 import kotlin.random.Random
 
 class ConduitClientTest {
@@ -15,7 +14,7 @@ class ConduitClientTest {
     @Test
     fun `GET ARTICLES`() {
         runBlocking {
-            val articles = conduitClient.api.getArticles()
+            val articles = conduitClient.publicApi.getArticles()
             assertNotNull(articles.body()?.articles)
         }
     }
@@ -23,7 +22,7 @@ class ConduitClientTest {
     @Test
     fun `GET ARTICLES BY AUTHOR`() {
         runBlocking {
-            val articles = conduitClient.api.getArticles(author = "Gerome")
+            val articles = conduitClient.publicApi.getArticles(author = "Gerome")
             assertNotNull(articles.body()?.articles)
         }
     }
@@ -31,7 +30,7 @@ class ConduitClientTest {
     @Test
     fun `GET ARTICLES BY TAG`() {
         runBlocking {
-            val articles = conduitClient.api.getArticles(tag = "welcome")
+            val articles = conduitClient.publicApi.getArticles(tag = "welcome")
             assertNotNull(articles.body()?.articles)
         }
     }
@@ -39,7 +38,7 @@ class ConduitClientTest {
     @Test
     fun `GET ARTICLES BY FAVORITED`() {
         runBlocking {
-            val articles = conduitClient.api.getArticles(favorited = "maazm622@gmail.com")
+            val articles = conduitClient.publicApi.getArticles(favorited = "maazm622@gmail.com")
             assertNotNull(articles.body()?.articles)
         }
     }
@@ -53,7 +52,7 @@ class ConduitClientTest {
                 "uipass${Random.nextInt(70, 9886)}",
                 "ui${Random.nextInt(65, 6500)}@jhik.com",
             )
-            val user = conduitClient.api.signupUser(SignupRequest(signup))
+            val user = conduitClient.publicApi.signupUser(SignupRequest(signup))
             assertEquals(signup.username, user.body()?.user?.username)
         }
     }
