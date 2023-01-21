@@ -3,18 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/drawable/baseline_how_to_reg_white_24dp.xml" value="0.244" />
+        <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/drawable/baseline_login_white_24dp.xml" value="0.244" />
+        <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/drawable/ic_menu_auth.xml" value="0.244" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/drawable/ic_menu_feed.xml" value="0.2265" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/drawable/ic_menu_settings.xml" value="0.2265" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/drawable/side_nav_bar.xml" value="0.121" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/app_bar_main.xml" value="0.22826086956521738" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/content_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/fragment_auth.xml" value="0.23802083333333332" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/fragment_gallery.xml" value="0.22826086956521738" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/fragment_global_feed.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/fragment_slideshow.xml" value="0.22826086956521738" />
-        <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/list_item_article.xml" value="0.536" />
-        <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/nav_header_main.xml" value="0.10989583333333333" />
+        <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/list_item_article.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/layout/nav_header_main.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/Conduit/app/src/main/res/menu/main.xml" value="0.4" />
       </map>
