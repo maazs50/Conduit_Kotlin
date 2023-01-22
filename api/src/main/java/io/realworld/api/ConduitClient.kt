@@ -38,7 +38,7 @@ object ConduitClient {
         .create(ConduitApi::class.java)
 
     val authApi = retrofitBuilder
-        .client(okHttpBuilder.build())
+        .client(okHttpBuilder.addInterceptor(authInterceptor).build())
         .build()
         .create(ConduitApiAuth::class.java)
 }

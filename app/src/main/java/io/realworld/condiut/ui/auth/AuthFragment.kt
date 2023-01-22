@@ -27,7 +27,8 @@ class AuthFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = _binding?.let{Navigation.findNavController(it.root)}
+        //Signup was crash bcoz of findNavController(it.root) we needed fragment id
+        navController = _binding?.let{Navigation.findNavController(it.root.findViewById(R.id.authFragmentNavHost))}
         _binding?.authTabLayout?.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when(tab?.position){
