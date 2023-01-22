@@ -50,7 +50,7 @@
         android:id="@+id/logoutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#DF0A0A"
+        android:backgroundTint="#DF0A0A"
         android:text="Click logout"/>
 
 </LinearLayout>

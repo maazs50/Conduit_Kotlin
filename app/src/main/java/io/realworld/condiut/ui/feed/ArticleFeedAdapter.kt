@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import io.realworld.api.models.entity.Article
 import io.realworld.condiut.databinding.ListItemArticleBinding
 
-class ArticleFeedAdapter : ListAdapter<Article, ArticleFeedAdapter.ArticleViewHolder>(object : DiffUtil.ItemCallback<Article>(){
+class ArticleFeedAdapter(val listener: OnArticleClickedListener) : ListAdapter<Article, ArticleFeedAdapter.ArticleViewHolder>(object : DiffUtil.ItemCallback<Article>(){
     override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
         return oldItem == newItem
     }
@@ -22,6 +22,9 @@ class ArticleFeedAdapter : ListAdapter<Article, ArticleFeedAdapter.ArticleViewHo
     }
 }) {
 
+    interface OnArticleClickedListener{
+        fun onArticleClicked(slug:String)
+    }
     inner class ArticleViewHolder(view: View): RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
@@ -35,8 +38,11 @@ class ArticleFeedAdapter : ListAdapter<Article, ArticleFeedAdapter.ArticleViewHo
             authorTextView.text = article.author.username
             titleTextView.text = article.title
             bodySnippetTextView.text = article.body
-            dateTextView.text = "December 2020"
+            dateTextView.text = "December 2020"//TODO date has to be implemented
             avtarImageView.background = ColorDrawable(Color.GRAY)
+            root.setOnClickListener {
+                listener.onArticleClicked(article.slug)
+            }
         }
 
     }

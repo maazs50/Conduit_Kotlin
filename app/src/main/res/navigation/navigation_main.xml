@@ -9,13 +9,37 @@
         android:id="@+id/nav_global_feed"
         android:name="io.realworld.condiut.ui.feed.GlobalFeedFragment"
         android:label="@string/menu_global_feed"
-        tools:layout="@layout/fragment_global_feed" />
+        tools:layout="@layout/fragment_global_feed" >
+        <action
+            android:id="@+id/action_nav_global_feed_to_nav_article"
+            app:destination="@id/nav_article"
+            app:popUpTo="@id/nav_global_feed"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim">
+            <argument android:name="@string/article_id"
+                app:argType="string"/>
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/nav_my_feed"
         android:name="io.realworld.condiut.ui.feed.MyFeedFragment"
         android:label="@string/menu_my_feed"
-        tools:layout="@layout/fragment_my_feed" />
+        tools:layout="@layout/fragment_my_feed" >
+        <action
+            android:id="@+id/action_nav_my_feed_to_nav_article"
+            app:destination="@id/nav_article"
+            app:popUpTo="@id/nav_my_feed"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim">
+            <argument android:name="@string/article_id"
+                app:argType="string"/>
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/nav_auth"
         android:name="io.realworld.condiut.ui.auth.AuthFragment"
@@ -26,5 +50,10 @@
         android:name="io.realworld.condiut.ui.settings.SettingsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings"/>
+    <fragment
+        android:id="@+id/nav_article"
+        android:name="io.realworld.condiut.ui.article.ArticleFragment"
+        android:label="@string/menu_article"
+        tools:layout="@layout/fragment_article"/>
 
 </navigation>

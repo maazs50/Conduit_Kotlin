@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.realworld.condiut.R
 import io.realworld.condiut.databinding.FragmentGlobalFeedBinding
@@ -37,11 +39,21 @@ class MyFeedFragment : Fragment() {
     }
 
     fun setupRecyclerView(){
-        feedAdapter = ArticleFeedAdapter()
+        feedAdapter = ArticleFeedAdapter(object : ArticleFeedAdapter.OnArticleClickedListener{
+            override fun onArticleClicked(slug:String) = openArticle(slug)
+
+        })
         _binding?.rvFeed?.apply{
             layoutManager = LinearLayoutManager(context)
             adapter = feedAdapter
         }
+    }
+
+    fun openArticle(articleId:String){
+        findNavController().navigate(
+            R.id.action_nav_my_feed_to_nav_article,
+            bundleOf(getString(R.string.article_id) to articleId)
+        )
     }
 
     override fun onDestroyView() {
