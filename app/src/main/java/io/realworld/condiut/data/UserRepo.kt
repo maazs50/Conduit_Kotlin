@@ -1,5 +1,6 @@
 package io.realworld.condiut.data
 
+import android.content.SharedPreferences
 import io.realworld.api.ConduitClient
 import io.realworld.api.models.entity.User
 import io.realworld.api.models.entity.UserCred
@@ -20,7 +21,11 @@ object UserRepo {
         return response.body()?.user
     }
 
-    suspend fun getUserProfile() = authApi.getCurrentUser().body()?.user
+    suspend fun getUserProfile(token:String): User?{
+        ConduitClient.authToken = token
+        val response = authApi.getCurrentUser().body()?.user
+        return response
+    }
 
     suspend fun signup(username: String, email:String, password: String): User? {
         val response = api.signupUser(SignupRequest(UserCred(email,password,username)))

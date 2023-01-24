@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import io.realworld.condiut.R
 import io.realworld.condiut.databinding.FragmentArticleBinding
+import io.realworld.condiut.extensions.loadImage
+import io.realworld.condiut.extensions.showFormattedDate
 
 class ArticleFragment : Fragment() {
 
@@ -38,7 +40,8 @@ class ArticleFragment : Fragment() {
                 titleTextView.text = it.title
                 bodyTextView.text = it.body
                 usernameTextView.text = it.author.username
-                dateTextView.text = it.createdAt
+                dateTextView.showFormattedDate(it.createdAt)
+                avtarImageView.loadImage(it.author.image,true)
             }
         }
     }

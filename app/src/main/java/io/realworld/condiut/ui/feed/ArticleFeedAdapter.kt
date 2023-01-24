@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import io.realworld.api.models.entity.Article
 import io.realworld.condiut.databinding.ListItemArticleBinding
+import io.realworld.condiut.extensions.loadImage
+import io.realworld.condiut.extensions.showFormattedDate
 
 class ArticleFeedAdapter(val listener: OnArticleClickedListener) : ListAdapter<Article, ArticleFeedAdapter.ArticleViewHolder>(object : DiffUtil.ItemCallback<Article>(){
     override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
@@ -38,8 +40,8 @@ class ArticleFeedAdapter(val listener: OnArticleClickedListener) : ListAdapter<A
             authorTextView.text = article.author.username
             titleTextView.text = article.title
             bodySnippetTextView.text = article.body
-            dateTextView.text = "December 2020"//TODO date has to be implemented
-            avtarImageView.background = ColorDrawable(Color.GRAY)
+            dateTextView.showFormattedDate(article.createdAt)
+            avtarImageView.loadImage(article.author.image,true)
             root.setOnClickListener {
                 listener.onArticleClicked(article.slug)
             }

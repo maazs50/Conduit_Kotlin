@@ -16,4 +16,5 @@
     <string name="login">Login</string>
     <string name="signup">Signup</string>
     <string name="article_id">articleId</string>
+    <string name="action_logout">Logout</string>
 </resources>
